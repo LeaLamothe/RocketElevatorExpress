@@ -1,4 +1,4 @@
-const dataBase=
+let dataBase=
 [
     {
         "first_name": "Orlando",
@@ -81,6 +81,6 @@ const dataBase=
         "fee": "10001"
     }
 ]
-module.exports={dataBase}
+module.exports={dataBase};
 
 //conts{dataBase} = require{path du fichier (data.js)}
