@@ -1,14 +1,5 @@
 
-const costs = {
-    standard: 8000,
-    premium: 12000,
-    excelium: 15000,
-};
-const percentage = {
-    standard: 0.10,
-    premium: 0.15,
-    excelium: 0.20
-}
+const {dataBase,costs,percentage} = require("./data.js");
 
 function elevatorCostRes(apartment,floors,tier){
     if(!['standard', 'premium', 'excelium'].includes(tier)){

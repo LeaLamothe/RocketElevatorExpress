@@ -147,7 +147,7 @@ const percentage = {
     
 
 
-module.exports={dataBase};
+module.exports={dataBase,costs,percentage};
 
 //fonction calcutlate les ascenceurs
 
