@@ -131,7 +131,24 @@ let dataBase=
             "rating": "54",
             "fee": "4000"
         }
+        
     ]
+    
+   const costs = {
+    standard: 8000,
+    premium: 12000,
+    excelium: 15000,
+};
+const percentage = {
+    standard: 0.10,
+    premium: 0.15,
+    excelium: 0.20
+}
+    
+
+
 module.exports={dataBase};
+
+//fonction calcutlate les ascenceurs
 
 //conts{dataBase} = require{path du fichier (data.js)}

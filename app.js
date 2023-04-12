@@ -3,6 +3,7 @@ const app = express()
 const port = process.env.PORT || 3000;
 const envName = process.env.ENV_NAME || 'local';
 const dataAgent = require("./data.js");
+const { elevatorCostRes } = require('./cost.js');
 // const { calculateRes, calculateTotalExcelium, calculateTotalPremium, calculateTotalStandard } = require('./cost.js');
 
 //hello
@@ -22,7 +23,7 @@ app.get('/api/status', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(` server listening on port ${port}`)
+  console.log(` server listening on port ${port} `)
 })
 
 //email
@@ -54,8 +55,9 @@ res.send({
   AverageRating: averageRating
 });
 });
-
+//Get Calcul residentiel
 app.get('/api/calc-residential', (req, res) => {
-const { numApts, numFloors, standard } = req.query;
+const { apartment, floors, tier } = req.query; //input fields
+res.send(elevatorCostRes(apartment,floors,tier))
 });
 
