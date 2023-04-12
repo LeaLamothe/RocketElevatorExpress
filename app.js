@@ -5,7 +5,6 @@ const envName = process.env.ENV_NAME || 'local';
 const {dataBase,costs,percentage} = require("./data.js");
 const dataAgent = require("./data.js");
 const { elevatorCostRes } = require('./cost.js');
-// const { calculateRes, calculateTotalExcelium, calculateTotalPremium, calculateTotalStandard } = require('./cost.js');
 
 //hello
 app.get('/api/hello', (req, res) => {
@@ -34,9 +33,9 @@ app.get('/api/email-list',(req,res) => {
 });
 
 //agentRegion
-app.get('/api/region-avg/:region', (req, res) => {
-  const agentsInRegions = dataAgent.dataBase.filter(agents => agents.region === (req.params.region));
-  const region = req.params.region
+app.get('/api/region-avg', (req, res) => {
+  const agentsInRegions = dataAgent.dataBase.filter(agents => agents.region === (req.query.region));
+  const region = req.query.region
   if (agentsInRegions.length==0) {
     return res.status(404).send('No agents available in this region at the moment please try again later.')
     
