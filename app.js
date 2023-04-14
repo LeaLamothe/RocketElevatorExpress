@@ -51,6 +51,7 @@ app.get('/api/region-avg', (req, res) => {
   averageFee = Math.round(averageFee / agentsInRegions.length);
   averageRating =Math.round(averageRating / agentsInRegions.length);
   
+  //send average
 res.send({
   Region: region,
   AverageFee: averageFee,
